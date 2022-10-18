@@ -4,7 +4,7 @@ $(error The TAG variable is missing.)
 endif
  
 ACCOUNT := beanna
-SERVICE := docker-python-learning
+SERVICE := docker-cpp-learning
 IMAGE := $(ACCOUNT)/$(SERVICE)
  
  
@@ -20,11 +20,11 @@ tag:
 
 start:
 	$(info Make: Starting "$(TAG)" tagged container.)
-	@docker run --init -p 3000:5000 -dit --name $(SERVICE) $(IMAGE):$(TAG)
+	@docker run --init -p 3001:5001 -dit --name $(SERVICE) $(IMAGE):$(TAG)
 
 shell:
 	$(info Make: Entering "$(TAG)" docker container via interactive shell)
-	@docker exec -it $(SERVICE) /bin/bash
+	@docker exec -it $(SERVICE) /bin/sh
 
 stop:
 	$(info Make: Stopping "$(TAG)" tagged container.)
